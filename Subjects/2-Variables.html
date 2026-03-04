@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Variables</title>
+    <style>
+    
+    </style>
+  </head>
+  <body>
+    <p>Cart Quantity</p>
+    <button onclick="console.log('Cart quantity:' + count);
+            document.getElementById('counter').innerHTML=count;
+    ">ShowQuantity</button>
+    <button onclick="console.log('Cart quantity:' + ++count);
+            document.getElementById('counter').innerHTML=count;"
+    >Add to Cart</button>
+    <button onclick="console.log('Cart quantity:' + (count+=2));
+            document.getElementById('counter').innerHTML=count;
+    ">+2</button>
+    <button onclick="console.log('Cart quantity:' + (count+=3));
+            document.getElementById('counter').innerHTML=count;
+    ">+3</button>
+    <button onclick="console.log('Cart quantity:' + (count=0));
+            document.getElementById('counter').innerHTML=count;
+    ">Reset Cart</button>
+    <p id="counter"></p>
+    
+    <script>
+      let count = 0;
+      const variable2 = 3; // can't change its value later
+      var variable3 = 3; // old way we don't use anymore
+      console.log(typeof variable2); // show the type of the variable
+    </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Booleans</title>
+  </head>
+  <body>
+    <script>
+      
+      // falsy values: false 0 '' NaN undefined null
+      // truthy values: Any value not on this list is truthy
+      //*NaN: means Not a Number for example 'text'/5 this is not a valid Math
+      //*undefined:variable does not hava a value
+      
+      console.log(`(3 < 5):  ${3 < 5}`);// output: true
+      console.log(`(5 == '5.00'):  ${5 == '5.00'}`);// double equal convert types (we try to avoid this) output:true
+      console.log(`(5 === '5.00'):  ${5 === '5.00'}`);// triple equal output:false
+      // same thing apply to != and !== (we use !==)
+      
+      console.log('---------------');
+      
+      const age = 15;
+      if(age >= 16){
+        console.log('you can drive');
+        console.log('Congrats');
+      }
+      else if(age >= 14){
+        console.log('Almost there!');
+      }
+      else{
+        console.log('you can not drive');
+      }
+      
+      console.log('---------------');
+      
+      // ternary operator (shortcut)
+      const result = 0 ? 'truthy' : 'falsy';
+      console.log(`(result = 0 ? 'truthy' : 'falsy'):  ${result}`);
+      
+      console.log('---------------');
+      
+      // Guard operator
+      
+      //AND Operator &&
+      //Ex: (false && value2) it's impossible for both sides to be truthy
+      // in this case it stops early, Doesn't need to run the code on the right
+      const message1 = false && 'hello';// false
+      const message2 = 5 && 'hello';// hello
+      
+      console.log(message1);
+      console.log(message2);
+      
+      console.log('---------------');
+      
+      // Default Operator ||
+      
+      // OR Operator ||
+      // it is also stops early --> هون اذا الزبون بده يدفع باليورو الاوباريتر ما بشوف الشق الثاني اذا ما بختار شي بنحوله على الدولار
+      const currency = 'EUR' || 'usd';// 'EUR'
+      const currency2 = undefined || 'usd'; // usd
+      
+      console.log(currency);
+      console.log(currency2);
+      
+    </script>
+  </body>
+</html>
