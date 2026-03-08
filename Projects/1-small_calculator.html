@@ -16,19 +16,19 @@
   </head>
   <body onclick="document.getElementById('result').innerHTML=calculation;">
     <p>Calculator</p>
-    <button onclick="calculation+='0';">0</button>
-    <button onclick="calculation+='1';">1</button>
-    <button onclick="calculation+='2';">2</button>
-    <button onclick="calculation+='3';">3</button>
-    <button onclick="calculation+='4';">4</button>
-    <button onclick="calculation+='5';">5</button><br><br>
-    <button onclick="calculation+='6';">6</button>
-    <button onclick="calculation+='7';">7</button>
-    <button onclick="calculation+='8';">8</button>
-    <button onclick="calculation+='9';">9</button><br><br>
-    <button onclick="calculation+='+';">+</button>
-    <button onclick="calculation+='-';">-</button>
-    <button onclick="calculation+='*';">*</button>
+    <button onclick="updateCalculation(0);">0</button>
+    <button onclick="updateCalculation(1);">1</button>
+    <button onclick="updateCalculation(2);">2</button>
+    <button onclick="updateCalculation(3);">3</button>
+    <button onclick="updateCalculation(4);">4</button>
+    <button onclick="updateCalculation(5);">5</button><br><br>
+    <button onclick="updateCalculation(6);">6</button>
+    <button onclick="updateCalculation(7);">7</button>
+    <button onclick="updateCalculation(8);">8</button>
+    <button onclick="updateCalculation(9);">9</button><br><br>
+    <button onclick="updateCalculation('+');">+</button>
+    <button onclick="updateCalculation('-');">-</button>
+    <button onclick="updateCalculation('*');">*</button>
     <button onclick="document.getElementById('result').innerHTML=(calculation = eval(calculation));">=</button><br><br>
     <button onclick="calculation=''">Clear</button>
     <p id="result"></p>
@@ -37,6 +37,13 @@
     <script>
       let calculation ='';
       
+      function updateCalculation(addCalculation){
+        return calculation+=addCalculation;
+      }
+      
+      
+      
+      /*
       let name = 'Eshak Alkhateb';
       let cost = 20;
       let tax = cost * 0.1;
@@ -44,6 +51,7 @@
       console.log(`Cost of food: $${cost}`);
       console.log(`tax is: $${tax}`);
       console.log(`total cost: $${cost + tax}`);
+      */
     </script>
   </body>
 </html>
