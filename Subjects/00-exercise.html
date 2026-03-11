@@ -10,7 +10,35 @@
   <body>
     
     <script>
-    
+      function comparePrice(product1, product2){
+        return (product1.price < product2.price? product1:product2);
+      }
+      function isSameProduct(product1, product2){
+        return (product1.name === product2.name) && (product1.price === product2.price);
+      }
+      function smallLetter(word = ''){
+        return word.toLowerCase();
+      }
+      
+      let word = 'hello! ';
+      let test = word.repeat(5);
+      
+      const product1 = {
+        name: 'basketball',
+        price: 2095,
+        'delivery-time': '3 days'
+      }
+      const product2 = {
+        name: 'sucks',
+        price: 900,
+        'delivery-time': '3 days'
+      }
+      const product3 = {
+        name: 'sucks',
+        price: 900,
+        'delivery-time': '3 days'
+      }
+      console.log(test);
     </script>
   </body>
 </html>

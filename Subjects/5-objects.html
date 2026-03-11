@@ -1,10 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
+  <head>
+    <title>Objects</title>
+  </head>
 <body>
-
+  
+  <script>
+    // create object product
+    const product = {
+      name: 'socks',
+      price: 1090
+    };
+    
+    console.log(`print the object >>`);
+    console.log(product);
+    
+    console.log('--------------------');
+    
+    console.log('product.name >> ' + product.name);
+    console.log('product.price >> ' + product.price);
+    
+    console.log('--------------------');
+    
+    product.name = 'cotton socks'; // change the product.name
+    
+    console.log(`print the object >>`);
+    console.log(product);
+    
+    console.log('--------------------');
+    
+    product.newProperty = true; // create a new property
+    
+    console.log(`print the object >>`);
+    console.log(product);
+    
+    delete product.newProperty; // delete a property
+    
+    console.log(`print the object >>`);
+    console.log(product);
+    
+    console.log('--------------------');
+    
+    //create object product2
+    const product2 = {
+      name: 'shirt',
+      ['delivery-time']: '1 day', // use bracket notation
+      rating: { // nested object is also a data type
+        stars: 4.5,
+        count: 87
+      },
+      fun: function function1() { // function is also a data type
+        console.log('function inside object');
+      }
+    };
+    
+    console.log(`print the object >>`);
+    console.log(product2);
+    
+    console.log(product2.name);
+    console.log(product2['name']);
+    console.log(product2['delivery-time']);// if we print it normally, it will consider the '-' sign as a minus operator and will get an error
+    product2.fun();
+    
+    // which one should we use?
+    // - use dot notation by default
+    //  - for properties that don't work, use bracket notation ['']
+    
+    /*
+             - JSON language is similar to JS object, but with fewer features,
+               we use it when we send data between computers and when we store data
+               EX:
+               {
+                "name": "shirt",
+                "delivery-time": "1 day",
+                "rating": {
+                  "stars": 4.5,
+                  "count": 87
+               }
+               Built-in JSON Object help us Convert:
+               JavaScript Object --> JSON
+               
+      Notes:
+           * JSON language does not support functions
+   */
+    console.log('--------------------')
+    console.log(JSON.stringify(product2)); //convert our JS object to JSON language (stringType)
+    const jsonString = JSON.stringify(product2); // save a copy
+    console.log(JSON.parse(jsonString)); //convert our JSON object to JS language (stringType)
+    
+    /* *Notes:
+              -inside an object we can have any type of values
+              -{JSON language is similar to JS object, but with fewer features
+                we use it when we send data between computers and when we store data}
+    */
+    
+    /*
+     localStorage:
+                  now if we refresh any page, it will automatically delete any data,
+                  localStorage let save data even if you refresh the page, it will keep it
+                  
+                  we use the localStorage.set('name-of-the-saved-data',value)// to send the data we want to save
+                  we use the localStorage.get('name-of-the-saved-data',value)// to get the data that we have saved
+      *Notes:
+            -we can save objects , variables ....
+            -the get() function is going to return the data in JSON language so we need to convert it to JS
+             using JSON.parse(localStorage.get('dataName')
+    */
+    
+    /*
+    wrap the string to object this feature called Auto-Boxing
+    Objects are references
+    console.log('hello'.length);
+    console.log('hello'.toUpperCase());
+    
+    const object1 = {
+      message: 'hello'
+    };
+    const object2 = object1;
+    
+    normally it will give us an error, because it is a const (بس هون المقصود فيها العنوان عشانها اوبجكت واحنا غيرنا القيمة, بس ما غيرنا العنوان اللي هو كونست)
+    object1.message = 'good job!';
+    console.log(object1);
+    console.log(object2);
+    
+    *************************************short cuts************************************
+    // create a copy of a property
+    //original-->>   const message = ojbect1.message;
+    //shortCut-->>   const { message } = object1; // this is called destructure
+    
+    Ex:const object3 = {
+         message: message
+         };
+       const object3 = {
+         message
+         };
+    
+    //Shorthand Method
+      const object5 = {
+        method(){
+          console.log('method');
+        }
+        };
+    */
+    
+  </script>
 </body>
 </html>
