@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM</title>
+</head>
+<body>
+  <button class="js-button1">hello1</button>
+  <button class="js-button2">hello2</button>
+  <button class="js-button3">hello3</button>
+  <p>fuck you</p>
+  
+  <script>
+    /*
+    dom is a built-in object, and contain properties like title,body,button ...
+    and combines JavaScript with HTML
+    when an HTML element inside in our JS, the HTML element is converted into a JavaScript object
+    
+    /*code
+    document.body.innerHTML = 'hello';
+    document.title = 'Good job!';
+    */
+    
+    /*
+    Notes:
+      *document.body is a very special property
+      *every HTML element has a property .innerHTML
+      *Whenever we get a value from the DOM, the value will be a string
+    */
+    
+    /*code
+    document.title = 'Title changed';
+    console.log(document.title);
+    
+    console.log('-------------------------------');
+    console.log(typeof document.body); //output: object
+    console.log(document.body); // brings the body element
+    console.log(document.body.innerHTML); // brings everything inside the body (HTML)
+    
+    document.body.innerHTML += '<button>button created</button>'
+    
+    /*
+      document.querySelector()
+      a function that lets us get any element from the page and put it inside JavaScript.
+      *by default, it brings the last element made
+    */
+    
+    /*
+    console.log('-------------------------------');
+    document.querySelector('button').innerHTML = 'change the html using querySelector()';
+    console.log(document.querySelector('button').innerHTML);
+    console.log(document.querySelector('button'));
+    */
+    
+    document.body.innerHTML += '<button class="js-button4">hello4</button>';
+    console.log(document.querySelector('.js-button4').innerHTML='This is button 4');
+    const jsButton4 = document.querySelector('.js-button4');
+    console.log(jsButton4);
+    
+    /*
+        *EVENT LISTENERS* |  *EVENTS*
+                onclick   | click
+                onkeydown | keypress
+                onscroll  | scrolling
+             onmouseenter | hovering over
+             onmouseleave | stop hovering over
+             *
+             * and many more...
+             
+             event, is object that gives you the key of any symbol on the keyboard like 'Enter' key for example
+             
+             <label><input class="js-cost-input" type="number" placeholder="Cost of order" onkeydown="handleCostKeydown(event);"></label>
+             
+              function handleCostKeydown(event) {
+                if(event.key === 'Enter')
+                 calculateToatal();
+              }
+    */
+  </script>
+</body>
+</html>

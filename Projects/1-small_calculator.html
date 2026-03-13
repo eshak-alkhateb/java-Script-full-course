@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8" >
+    <title >calculator</title >
+    <link rel="stylesheet" href="../fontawesome/css/all.min.css">
+    <style>
+      /*general*/
+      body{
+        margin:0;
+        background-color:black;
+      }
+      p{
+        margin:0;
+      }
+      div{
+        color:white;
+      }
+      button{
+        width:90%;
+        height:90%;
+        font-size:90px;
+        padding:78px;
+        border-radius:180px;
+        border-style:none;
+        background-color: #2c2c2c;
+        color: #ffffff;
+      }
+      /*head*/
+      .head{
+        display:grid;
+        grid-template-rows:1fr;
+        padding-left:20px;
+      }
+      #result{
+        margin:0;
+        font-size:100px;
+        padding-top:150px;
+        height:150px;
+      }
+      /*middle*/
+      .middle{
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr 1fr;
+        padding:10px;
+      }
+      button:active{
+        opacity:0.8;
+      }
+      /*bottom*/
+      .bottom{
+        display:grid;
+        grid-template-rows:1fr 1fr;
+        justify-items: center;
+      }
+    </style>
+  </head>
+  <body onclick="document.getElementById('result').innerHTML=calculation;">
+  
+    <div class="head">
+      <div id="result"></div>
+    </div>
+    
+    <hr>
+    
+    <div class="middle">
+      <button onclick="updateCalculation(7);">7</button>
+      <button onclick="updateCalculation(8);">8</button>
+      <button onclick="updateCalculation(9);">9</button>
+      <button onclick="updateCalculation('/');">/</button>
+      <button onclick="updateCalculation(4);">4</button>
+      <button onclick="updateCalculation(5);">5</button>
+      <button onclick="updateCalculation(6);">6</button>
+      <button onclick="updateCalculation('-');">-</button>
+      <button onclick="updateCalculation(1);">1</button>
+      <button onclick="updateCalculation(2);">2</button>
+      <button onclick="updateCalculation(3);">3</button>
+      <button onclick="updateCalculation('+');">+</button>
+      <button onclick="updateCalculation('*');">*</button>
+      <button onclick="updateCalculation(0);">0</button>
+      <button onclick="updateCalculation('.')">.</button>
+      <button onclick="document.getElementById('result').innerHTML=(calculation = eval(calculation));">=</button>
+    </div>
+    
+    <div class="bottom">
+      <button onclick="deleteChar();document.getElementById('result').innerHTML=calculation;">Back</button>
+      <button onclick="calculation='';localStorage.clear();">Clear</button>
+    </div>
+    
+    <script>
+      //stage1 add function
+      //stage2 add localStorage
+      let calculation = JSON.parse(localStorage.getItem('calculation')) || '';
+      
+      function updateCalculation(addCalculation){
+        calculation += addCalculation;
+        localStorage.setItem('calculation',JSON.stringify(calculation));
+      }
+      
+      function deleteChar(){
+        calculation = JSON.parse(localStorage.getItem('calculation')) || '';
+        calculation = calculation.substring(0,calculation.length-1) + '';
+        
+        if (!calculation) {
+          calculation = '';
+        } else
+          localStorage.setItem('calculation', JSON.stringify(calculation));
+        
+      }
+      
+      
+      
+      /*
+      let name = 'Eshak Alkhateb';
+      let cost = 20;
+      let tax = cost * 0.1;
+      console.log(`My name is: ${name}`);
+      console.log(`Cost of food: $${cost}`);
+      console.log(`tax is: $${tax}`);
+      console.log(`total cost: $${cost + tax}`);
+      */
+    </script>
+  </body>
+</html>
