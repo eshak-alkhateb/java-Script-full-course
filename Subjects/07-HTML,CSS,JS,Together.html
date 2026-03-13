@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>DOM Exercises</title>
+    <title>HTML,CSS,JS,Together</title>
     <style>
+      body{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      
       .subscribe-button{
         border: none;
         background-color: black;
@@ -11,31 +15,38 @@
         border-radius: 20px;
         font-weight: bold;
         cursor: pointer;
+        margin-bottom: 30px;
+      }
+      .is-subscribed{
+        background-color:rgb(240, 240, 240);
+        color: black;
+      }
+      .cost-input{
+        font-size: 15px;
+        padding: 10px;
+      }
+      .calculate-button{
+        font-size: 15px;
+        padding: 11px;
+        background-color: green;
+        color: white;
+        border: none;
+        cursor: pointer;
       }
     </style>
   </head>
   <body>
+    <!-- the element can have more than one class by separating them with a space -->
+    
     <p>YouTube Subscribe Button</p>
-    <button class="subscribe-button js-subscribe-button"
-            onclick="subscribe()">
-      Subscribe
-    </button>
+    <button class="subscribe-button js-subscribe-button" onclick="subscribe()">Subscribe</button>
 
     <p class="shipping-calculator-title">Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.<br></p>
+    <p>Orders over $40 = FREE shipping.</p>
     <p>
-      Orders under $40 = +$10 shipping.<br>
-    </p>
-    <p>
-      Orders over $40 = FREE shipping.
-    </p>
-    <p>
-      <input placeholder="Cost of order"
-             class="cost-input js-cost-input"
-             onkeydown="handleCostInputKeydown(event)">
-      <button class="calculate-button"
-              onclick="calculateTotal()">
-        Calculate
-      </button>
+      <input placeholder="Cost of order" class="cost-input js-cost-input" onkeydown="handleCostInputKeydown(event)">
+      <button class="calculate-button" onclick="calculateTotal()">Calculate</button>
     </p>
     <p class="js-total"></p>
 
@@ -45,6 +56,9 @@
     </a>
 
     <script>
+      /*
+          .classList property gives us control of the class attribute
+      */
       function handleCostInputKeydown(event) {
         const key = event.key;
         
@@ -57,14 +71,16 @@
       
       function subscribe() {
         const subscribeButton = document.querySelector('.js-subscribe-button');
-        
-        if (subscribeButton.classList.contains('is-subscribed')) {
-          subscribeButton.innerHTML = 'Subscribe';
-          subscribeButton.classList.remove('is-subscribed');
+        // when we click the button,
+        // 1.add a class
+        // 2.This class will have different styles
+        if (subscribeButton.innerText === 'Subscribe') {
+          subscribeButton.innerHTML = 'Subscribed';
+          subscribeButton.classList.add('is-subscribed'); // create the class
           
         } else {
-          subscribeButton.innerHTML = 'Subscribed';
-          subscribeButton.classList.add('is-subscribed');
+          subscribeButton.innerHTML = 'Subscribe';
+          subscribeButton.classList.remove('is-subscribed'); // remove the class
         }
       }
       

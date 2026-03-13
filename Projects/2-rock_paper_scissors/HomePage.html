@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./Styles.css">
+    <script src="Scripts.js"></script>
+    <!--
+    stages:
+    1_stage: create the project.
+    2_stage: add functions.
+    3_stage: add objects.
+    4_stage: add local storage
+    5_combine HTML, CSS, JS Together and move everyone to its own file
+    -->
+  </head>
+  <body>
+    <p class="title">Rock Paper Scissors</p>
+    <button class="move-button" onclick="playGame('rock');"><img class="move-icon" src="./icons/rock-emoji.png" alt="rock"></button>
+    <button class="move-button" onclick="playGame('paper');"><img class="move-icon" src="./icons/paper-emoji.png" alt="paper"></button>
+    <button class="move-button" onclick="playGame('scissors');"><img class="move-icon" src="./icons/scissors-emoji.png" alt="scissors"></button>
+    
+    <p class="js-result result"></p>
+    <p class="js-show-two-states"></p>
+    <p class="js-score score">Wins: 0, Losses: 0, Ties: 0</p>
+    <button class="reset-score-button" onclick="resetStatus();">Reset Score</button>
+  
+  </body>
+</html>
