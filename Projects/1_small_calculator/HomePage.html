@@ -39,10 +39,17 @@
         height:150px;
       }
       /*middle*/
-      .middle{
+      .left-side{
         display:grid;
-        grid-template-columns:1fr 1fr 1fr 1fr;
+        grid-template-columns:1fr 1fr 1fr;
         padding:10px;
+      }
+      .right-side{
+        display:grid;
+        grid-template-rows:1fr 1fr 1fr;
+      }
+      .right-side button{
+        background-color: orange;
       }
       button:active{
         opacity:0.8;
@@ -52,6 +59,10 @@
         display:grid;
         grid-template-rows:1fr 1fr;
         justify-items: center;
+      }
+      .middle{
+        display:grid;
+        grid-template-columns:3fr 1fr;
       }
     </style>
   </head>
@@ -64,27 +75,31 @@
     <hr>
     
     <div class="middle">
-      <button onclick="updateCalculation(7);">7</button>
-      <button onclick="updateCalculation(8);">8</button>
-      <button onclick="updateCalculation(9);">9</button>
-      <button onclick="updateCalculation('/');">/</button>
-      <button onclick="updateCalculation(4);">4</button>
-      <button onclick="updateCalculation(5);">5</button>
-      <button onclick="updateCalculation(6);">6</button>
-      <button onclick="updateCalculation('-');">-</button>
+    <div class="left-side">
       <button onclick="updateCalculation(1);">1</button>
       <button onclick="updateCalculation(2);">2</button>
       <button onclick="updateCalculation(3);">3</button>
-      <button onclick="updateCalculation('+');">+</button>
-      <button onclick="updateCalculation('*');">*</button>
+      <button onclick="updateCalculation(4);">4</button>
+      <button onclick="updateCalculation(5);">5</button>
+      <button onclick="updateCalculation(6);">6</button>
+      <button onclick="updateCalculation(7);">7</button>
+      <button onclick="updateCalculation(8);">8</button>
+      <button onclick="updateCalculation(9);">9</button>
       <button onclick="updateCalculation(0);">0</button>
       <button onclick="updateCalculation('.')">.</button>
       <button onclick="document.getElementById('result').innerHTML=(calculation = eval(calculation));">=</button>
     </div>
+    <div class="right-side">
+      <button onclick="updateCalculation('+');">+</button>
+      <button onclick="updateCalculation('-');">-</button>
+      <button onclick="updateCalculation('*');">*</button>
+      <button onclick="updateCalculation('/');">/</button>
+    </div>
+    </div>
     
     <div class="bottom">
       <button onclick="deleteChar();document.getElementById('result').innerHTML=calculation;">Back</button>
-      <button onclick="calculation='';localStorage.clear();">Clear</button>
+      <button class="clear-button" onclick="calculation='';localStorage.clear();">Clear</button>
     </div>
     
     <script>

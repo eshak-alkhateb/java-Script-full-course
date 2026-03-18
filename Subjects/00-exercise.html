@@ -1,158 +1,27 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="./00-exercise.css">
-  </head>
-  <body>
-    <button class="toggle-button js-button" onclick="
-      toggleButton('.js-button');
-    ">Gaming</button>
-
-    <button class="toggle-button js-button-2" onclick="
-      toggleButton('.js-button-2');
-    ">Music</button>
-
-    <button class="toggle-button js-button-3" onclick="
-      toggleButton('.js-button-3');
-    ">Tech</button>
-
-    <script src="./00-exercise.js"></script>
-  </body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-
-<!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>DOM Exercises</title>
+    <title>Exercise</title>
     <style>
-      .subscribe-button{
-        border: none;
-        background-color: black;
-        color: white;
-        padding: 10px 15px;
-        border-radius: 20px;
-        font-weight: bold;
-        cursor: pointer;
-      }
-    </style>
+     </style>
   </head>
   <body>
-    <p>YouTube Subscribe Button</p>
-    <button class="subscribe-button js-subscribe-button"
-            onclick="subscribe()">
-      Subscribe
-    </button>
-
-    <p class="shipping-calculator-title">Amazon Shipping Calculator</p>
-    <p>
-      Orders under $40 = +$10 shipping.<br>
-    </p>
-    <p>
-      Orders over $40 = FREE shipping.
-    </p>
-    <p>
-      <input placeholder="Cost of order"
-             class="cost-input js-cost-input"
-             onkeydown="handleCostInputKeydown(event)">
-      <button class="calculate-button"
-              onclick="calculateTotal()">
-        Calculate
-      </button>
-    </p>
-    <p class="js-total"></p>
-
-    <p class="rock-paper-scissors-title">Rock Paper Scissors</p>
-    <a href="https://supersimple.dev/projects/rock-paper-scissors">
-      Click here
-    </a>
-
+  
+ 
     <script>
-      function handleCostInputKeydown(event) {
-        const key = event.key;
-        
-        if (key === 'Enter') {
-          calculateTotal();
-        } else if (key === 'Escape') {
-          document.querySelector('.cost-input').value = '';
+      let words = ['apple', 'grape', 'apple', 'banana', 'banana', 'apple'];
+
+      function countWords(words){
+        let result = {};
+        for(let i = 0; i < words.length; i++){
+          if(!result[words[i]])
+            result[words[i]] = 1;
+          else
+            result[words[i]]++;
         }
+        return result;
       }
-      
-      function subscribe() {
-        const subscribeButton = document.querySelector('.js-subscribe-button');
-        
-        if (subscribeButton.classList.contains('is-subscribed')) {
-          subscribeButton.innerHTML = 'Subscribe';
-          subscribeButton.classList.remove('is-subscribed');
-          
-        } else {
-          subscribeButton.innerHTML = 'Subscribed';
-          subscribeButton.classList.add('is-subscribed');
-        }
-      }
-      
-      function calculateTotal() {
-        const inputElement = document.querySelector('.js-cost-input');
-        const cost = Number(inputElement.value) * 100;
-        
-        if (cost < 3500) {
-          document.querySelector('.js-total')
-                          .innerHTML = `$${(cost + 1000) / 100}`;
-        } else {
-          document.querySelector('.js-total')
-                          .innerHTML = `$${cost / 100}`;
-        }
-      }
+      console.log(countWords(words));// apple: 3, grape: 1, banana: 2
     </script>
   </body>
 </html>
-
- -->

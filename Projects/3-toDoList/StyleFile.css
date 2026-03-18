@@ -1,0 +1,36 @@
+.p{
+    margin: 0;
+}
+.container-task,.container{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 500px;
+}
+.container-task{
+    align-items: center;
+    margin-top:10px;
+}
+.js-inputElementTask,.js-inputElementDate{
+    flex:3;
+}
+.add-button{
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    font-size: 15px;
+    flex: 1.5;
+}
+.delete-task-button{
+    background-color: #873232;
+    color: white;
+    border: none;
+    padding: 10px 9px;
+    font-size: 15px;
+    flex: 1.5;
+}
+.show-task-date,.show-task{
+    flex:3;
+    overflow: hidden;
+}
