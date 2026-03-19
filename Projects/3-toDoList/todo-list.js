@@ -4,18 +4,15 @@ Main idea of JavaScript:
     2.Generate the HTML
     3. Make it interactive
 */
-let toDoList = []
-let toDoDate = [];
-let counter = 0;
+let toDoList = [];
 
 function addTodo(){
     const inputElementTask = document.querySelector('.js-inputElementTask');
     const inputElementDate = document.querySelector('.js-inputElementDate');
     const name = inputElementTask.value;
-    const date = inputElementDate.value || '';
+    const dueDate = inputElementDate.value || '';
     if(name) {
-        toDoList.push(name);
-        toDoDate.push(date);
+        toDoList.push({name, dueDate});
         renderTodoList();
     }
     inputElementTask.value = '';
@@ -26,9 +23,9 @@ function renderTodoList(){// show the toDoList
     for(let i = 0; i < toDoList.length; i++){
         const html=`
             <div class='container-task js-container-task'>
-            <div class='js-task show-task'>${toDoList[i]}</div>
-            <div class='show-task-date'>${toDoDate[i]}</div>
-            <button onclick='toDoList.splice(i,1);toDoDate.splice(i,1);renderTodoList();' class='js-delete-task-button delete-task-button'>Delete</button>
+            <div class='js-task show-task'>${toDoList[i].name}</div>
+            <div class='show-task-date'>${toDoList[i].dueDate}</div>
+            <button onclick='toDoList.splice(${i},1);renderTodoList();' class='js-delete-task-button delete-task-button'>Delete</button>
             </div>`;
         todoListHTML += html;
     }

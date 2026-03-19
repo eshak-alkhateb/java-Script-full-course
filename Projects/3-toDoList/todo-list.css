@@ -1,7 +1,16 @@
-.p{
-    margin: 0;
+body{
+    background-color: lightblue;
+    j
 }
-.container-task,.container{
+.title{
+    font-size:50px;
+    text-align:center;
+}
+.container{
+    display:grid;
+    justify-content: center;
+}
+.container-task,.add-container{
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -14,21 +23,18 @@
 .js-inputElementTask,.js-inputElementDate{
     flex:3;
 }
-.add-button{
+.add-button,.delete-task-button{
     background-color: green;
     color: white;
     border: none;
+    cursor:pointer;
     padding: 10px 10px;
     font-size: 15px;
     flex: 1.5;
 }
 .delete-task-button{
     background-color: #873232;
-    color: white;
-    border: none;
     padding: 10px 9px;
-    font-size: 15px;
-    flex: 1.5;
 }
 .show-task-date,.show-task{
     flex:3;

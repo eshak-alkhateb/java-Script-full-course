@@ -3,17 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <title>To Do List</title>
-  <link rel="stylesheet" href="./StyleFile.css">
+  <link rel="stylesheet" href="todo-list.css">
 </head>
 <body>
-  <p>Todo List Practice 1</p>
+  <p class="title">To Do List</p>
+  
   <div class="container">
+  
+  <div class="add-container">
   <input class="js-inputElementTask" type="text" placeholder="Todo name" onkeydown="handleEnterInput(event);">
   <input class="js-inputElementDate " type="date" onkeydown="handleEnterInput(event);">
   <button class="js-add-button add-button" onclick="addTodo();">Add</button>
   </div>
   
   <div class="tasks-container"></div>
-  <script src="./ScriptFile.js"></script>
+  
+  </div>
+  
+  <script src="todo-list.js"></script>
 </body>
 </html>
