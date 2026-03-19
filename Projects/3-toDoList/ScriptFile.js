@@ -24,12 +24,12 @@ function addTodo(){
 function renderTodoList(){// show the toDoList
     let todoListHTML = '';
     for(let i = 0; i < toDoList.length; i++){
-        const html=
-            "<div class='container-task" + " js-container-task'>"+
-            "<div class='js-task show-task'>" + toDoList[i] + "</div>"+
-            "<div class='show-task-date'>" + toDoDate[i]  + "</div>"+
-            "<button class='js-delete-task-button" +
-            " delete-task-button'>Delete</button>"+ "</div>";
+        const html=`
+            <div class='container-task js-container-task'>
+            <div class='js-task show-task'>${toDoList[i]}</div>
+            <div class='show-task-date'>${toDoDate[i]}</div>
+            <button onclick='toDoList.splice(i,1);toDoDate.splice(i,1);renderTodoList();' class='js-delete-task-button delete-task-button'>Delete</button>
+            </div>`;
         todoListHTML += html;
     }
     document.querySelector('.tasks-container').innerHTML = todoListHTML;
