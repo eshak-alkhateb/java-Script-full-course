@@ -2,10 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>my projects</title>
+  <title>My Projects</title>
+  <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+  <style>
+    a{
+      color:black;
+    }
+    img{
+      width:100%;
+    }
+    body{
+      background-color:lightblue;
+    }
+    .title{
+      font-size:50px;
+      text-align:center;
+    }
+    .project-container{
+      display:grid;
+      grid-template-columns: 100px 100px 100px;
+      justify-content:center;
+      align-items:center;
+      gap:100px;
+    }
+  </style>
 </head>
 <body>
-  <a href="Projects/1_small_calculator/HomePage.html">calculator</a><br><br>
-  <a href="Projects/2-rock_paper_scissors/HomePage.html">rock paper scissors</a>
+  <p class="title">My Projects</p>
+  <div class="project-container">
+    <div class="calculator">
+    <a href="Projects/1_small_calculator/small-calculator.html"><img src="./HomePage/calculator-icon.png" alt="calculator"></a>
+    </div>
+    <div class="rock-paper-scissors">
+    <a href="Projects/2-rock_paper_scissors/rock-paper-scissors.html"><img src="./HomePage/rock-paper-scissors.png" alt="rock-paper-scissors"></a>
+    </div>
+    <div class="todo-list">
+    <a href="./Projects/3-toDoList/todo-list.html"><img src="./HomePage/to-do-list.png" alt="rock-paper-scissors"></a>
+    </div>
+  </div>
+  
 </body>
 </html>

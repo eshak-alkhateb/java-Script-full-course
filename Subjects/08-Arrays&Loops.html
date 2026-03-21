@@ -14,7 +14,7 @@
       - represents a list of values
       - it is a special type of object
       
-      * an Array can have any type of value
+      * an Array can have any type of value (can have different types at the same array)
       * an Array is also a value
     */
     const myArray = [10, 20, 30];
@@ -30,6 +30,9 @@
     myArray.push(100);
     myArray.length;
     myArray.splice(0, 1) //first number is the index we want to remove, second is the number of values to remove
+    let copyMyArray = myArray.slice(); this makes a copy not a reference
+    
+    const [firstValue, secondValue] = [1, 2, 3]; // a way to store arrayVar in a different variables
     
     let i = 0;
     
@@ -82,6 +85,7 @@
       return result;
     }
     console.log(countWords(words));// apple: 3, grape: 1, banana: 2
+    
   </script>
 </body>
 </html>
