@@ -7,7 +7,31 @@
   </head>
   <body>
     <script>
-
+      let arr=['fuck','eshak','eshak','ali','Ahmad','fuck','fuck'];
+      
+      
+      
+      
+      console.log(unique(arr));
+      console.log(arr);
+      
+      function unique(arr){
+        let uniArray = [];
+        for(let i = 0; i < arr.length; i++){
+          if(findIndex(arr,arr[i]) === i)
+            uniArray.push(arr[i]);
+        }
+        return uniArray;
+      }
+      
+      function findIndex(arr,word){
+        let state = -1;
+        for(let i = 0; i < arr.length; i++){
+          if(arr[i] === word){
+            return i;
+          }
+        }
+      }
     </script>
   </body>
 </html>

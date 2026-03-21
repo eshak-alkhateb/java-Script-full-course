@@ -4,7 +4,8 @@ Main idea of JavaScript:
     2.Generate the HTML
     3. Make it interactive
 */
-let toDoList = [];
+let toDoList = JSON.parse(localStorage.getItem('todo')) || [];
+renderTodoList();
 
 function addTodo(){
     const inputElementTask = document.querySelector('.js-inputElementTask');
@@ -30,6 +31,7 @@ function renderTodoList(){// show the toDoList
         todoListHTML += html;
     }
     document.querySelector('.tasks-container').innerHTML = todoListHTML;
+    localStorage.setItem('todo',JSON.stringify(toDoList));
 }
 function handleEnterInput(event){
     if(event.key === 'Enter')
